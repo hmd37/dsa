@@ -49,3 +49,49 @@ while pointer2 < len(nums2):
     merged_array.append(nums2[pointer2])
     pointer2 += 1
 ```
+
+## The Triple Scroll Merge
+Your task is to write a function that merges three sorted arrays of numbers into a single sorted array.
+
+### Example Input
+
+```python
+array1 = [1, 4, 7]
+array2 = [2, 5, 8]
+array3 = [3, 6, 9]
+```
+
+### Example Output
+
+```
+[1, 2, 3, 4, 5, 6, 7, 8, 9]
+```
+
+### Solution:
+```python
+class Solution:
+    def merge_two_sorted_arrays(self, array1, array2):
+        pointer1 = 0
+        pointer2 = 0
+        merged = []
+
+        while pointer1 < len(array1) and pointer2 < len(array2):
+            if array1[pointer1] < array2[pointer2]:
+                merged.append(array1[pointer1])
+                pointer1 += 1
+            else:
+                merged.append(array2[pointer2])
+                pointer2 += 1
+
+        # Add remaining elements
+        merged.extend(array1[pointer1:])
+        merged.extend(array2[pointer2:])
+
+        return merged
+
+    def merge_three_sorted_arrays(self, array1, array2, array3):
+        first_merge = self.merge_two_sorted_arrays(array1, array2)
+        final_merge = self.merge_two_sorted_arrays(first_merge, array3)
+
+        return final_merge
+```
