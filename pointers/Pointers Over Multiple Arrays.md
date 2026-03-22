@@ -1,6 +1,7 @@
+## Pointers Over Multiple Arrays
 Sometimes you’ll need to work with multiple arrays where standard linear traversal isn’t possible because you can’t simply iterate from the beginning to the end of one array. In these cases, you can use multiple single pointers — one for each array.
 
-## Example: Merging Two Sorted Arrays
+### Example: Merging Two Sorted Arrays
 
 **Task:** given two sorted arrays, merge them into a single sorted array.
 
@@ -12,14 +13,14 @@ merged_array = [1, 2, 2, 3, 5, 6]
 
 Since you can’t just iterate linearly from start to finish in either array (you don’t know which element is next in sorted order), index pointers are ideal.
 
-## Defining the Pointers
+### Defining the Pointers
 
 - **pointer1**: Tracks the current position in `nums1` — the next element not yet added to `merged_array`.
 - **pointer2**: Tracks the current position in `nums2` — the next element not yet added to `merged_array`.
 
 Initially, both pointers start at index `0` of their respective arrays.
 
-## Merging Process
+### Merging Process
 
 1. Compare `nums1[pointer1]` and `nums2[pointer2]`.
 2. Whichever element is smaller goes into `merged_array`, and the corresponding pointer is incremented.
