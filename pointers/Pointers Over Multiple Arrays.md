@@ -67,7 +67,7 @@ array3 = [3, 6, 9]
 [1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
 
-### Solution:
+### Solution
 ```python
 class Solution:
     def merge_two_sorted_arrays(self, array1, array2):
