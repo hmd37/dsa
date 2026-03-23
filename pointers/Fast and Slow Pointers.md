@@ -46,11 +46,11 @@ class Solution:
     def move_zeros_to_end(arr):
         slow = 0
 
-        for fast in range(1, len(arr)):
+        for fast in range(len(arr)):
             if arr[fast] != 0:
                 arr[slow], arr[fast] = arr[fast], arr[slow]
                 slow += 1
-    
+
         return arr
 ```
 
